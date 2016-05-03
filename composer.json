@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
-        "symfony/symfony": "~2.7",
+        "php": ">=5.3",
+        "symfony/symfony": "~2.8",
         "symfony/framework-bundle": "~2.7",
         "doctrine/orm": "~2.4",
         "swiftmailer/swiftmailer": "~5.4"
