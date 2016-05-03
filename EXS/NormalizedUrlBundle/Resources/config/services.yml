@@ -1,0 +1,4 @@
+services:
+    url.manager:
+        class: 'NormalizedUrlBundle\Services\UrlManager'   
+        arguments: ['@doctrine.orm.entity_manager']
