@@ -1,6 +1,6 @@
 <?php
 
-namespace NormalizedUrlBundle\Entity;
+namespace EXS\NormalizedUrlBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Hosts
  *
  * @ORM\Table(name="hosts")
- * @ORM\Entity(repositoryClass="NormalizedUrlBundle\Entity\Repository\HostRepository")
+ * @ORM\Entity(repositoryClass="EXS\NormalizedUrlBundle\Entity\Repository\HostRepository")
  */
 class Host
 {
@@ -49,7 +49,7 @@ class Host
      * Set host name
      * 
      * @param string $name
-     * @return \NormalizedUrlBundle\Entity\Host
+     * @return EXS\NormalizedUrlBundle\Entity\Host
      */    
     public function setName($name)
     {
@@ -72,7 +72,7 @@ class Host
      * Set logged datetime
      * 
      * @param Datetime $logged
-     * @return \NormalizedUrlBundle\Entity\Host
+     * @return EXS\NormalizedUrlBundle\Entity\Host
      */
     public function setLogged($logged)
     {

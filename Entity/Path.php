@@ -1,6 +1,6 @@
 <?php
 
-namespace NormalizedUrlBundle\Entity;
+namespace EXS\NormalizedUrlBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Paths
  *
  * @ORM\Table(name="paths")
- * @ORM\Entity(repositoryClass="NormalizedUrlBundle\Entity\Repository\PathRepository")
+ * @ORM\Entity(repositoryClass="EXS\NormalizedUrlBundle\Entity\Repository\PathRepository")
  */
 class Path
 {
@@ -49,7 +49,7 @@ class Path
      * Set path name
      * 
      * @param string $name
-     * @return \NormalizedUrlBundle\Entity\Path
+     * @return EXS\NormalizedUrlBundle\Entity\Path
      */    
     public function setName($name)
     {
@@ -72,7 +72,7 @@ class Path
      * Set logged datetime
      * 
      * @param Datetime $logged
-     * @return \NormalizedUrlBundle\Entity\Path
+     * @return EXS\NormalizedUrlBundle\Entity\Path
      */
     public function setLogged($logged)
     {

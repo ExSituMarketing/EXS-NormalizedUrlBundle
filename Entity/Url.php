@@ -1,6 +1,6 @@
 <?php
 
-namespace NormalizedUrlBundle\Entity;
+namespace EXS\NormalizedUrlBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index;
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping\Index;
  *
  * @ORM\Table(name="urls")
  * @ORM\Table(name="urls",indexes={@Index(name="hashkey_idx", columns={"hashkey"})})
- * @ORM\Entity(repositoryClass="NormalizedUrlBundle\Entity\Repository\UrlRepository")
+ * @ORM\Entity(repositoryClass="EXS\NormalizedUrlBundle\Entity\Repository\UrlRepository")
  */
 class Url
 {
@@ -33,7 +33,7 @@ class Url
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="NormalizedUrlBundle\Entity\Host")
+     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Host")
      * @ORM\JoinColumn(name="host_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
     protected $host;
@@ -41,7 +41,7 @@ class Url
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="NormalizedUrlBundle\Entity\Path")
+     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Path")
      * @ORM\JoinColumn(name="path_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
     protected $path;
@@ -49,7 +49,7 @@ class Url
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="NormalizedUrlBundle\Entity\Querystring")
+     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Querystring")
      * @ORM\JoinColumn(name="querystring_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
     protected $querystring;
@@ -76,7 +76,7 @@ class Url
      * Set url hashkey
      * 
      * @param string $hashkey
-     * @return \NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */    
     public function setHashkey($hashkey)
     {
@@ -99,7 +99,7 @@ class Url
      * Set url host
      * 
      * @param int $host
-     * @return \NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */    
     public function setHost($host)
     {
@@ -122,7 +122,7 @@ class Url
      * Set url path
      * 
      * @param int $path
-     * @return \NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */    
     public function setPath($path)
     {
@@ -145,7 +145,7 @@ class Url
      * Set url querystring
      * 
      * @param int $querystring
-     * @return \NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */    
     public function setQuerystring($querystring)
     {
@@ -168,7 +168,7 @@ class Url
      * Set logged datetime
      * 
      * @param Datetime $logged
-     * @return \NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */
     public function setLogged($logged)
     {

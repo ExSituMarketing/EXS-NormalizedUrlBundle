@@ -1,6 +1,6 @@
 <?php
 
-namespace NormalizedUrlBundle\Entity;
+namespace EXS\NormalizedUrlBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Querystring
  *
  * @ORM\Table(name="querystrings")
- * @ORM\Entity(repositoryClass="NormalizedUrlBundle\Entity\Repository\QuerystringRepository")
+ * @ORM\Entity(repositoryClass="EXS\NormalizedUrlBundle\Entity\Repository\QuerystringRepository")
  */
 class Querystring
 {
@@ -49,7 +49,7 @@ class Querystring
      * Set querystring name
      * 
      * @param string $name
-     * @return \NormalizedUrlBundle\Entity\Querystring
+     * @return EXS\NormalizedUrlBundle\Entity\Querystring
      */    
     public function setName($name)
     {
@@ -72,7 +72,7 @@ class Querystring
      * Set logged datetime
      * 
      * @param Datetime $logged
-     * @return \NormalizedUrlBundle\Entity\Querystring
+     * @return EXS\NormalizedUrlBundle\Entity\Querystring
      */
     public function setLogged($logged)
     {

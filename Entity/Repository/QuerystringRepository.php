@@ -1,6 +1,6 @@
 <?php
 
-namespace NormalizedUrlBundle\Entity\Repository;
+namespace EXS\NormalizedUrlBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

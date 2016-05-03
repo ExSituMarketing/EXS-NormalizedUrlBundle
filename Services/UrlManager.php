@@ -1,12 +1,12 @@
 <?php
 
-namespace NormalizedUrlBundle\Services;
+namespace EXS\NormalizedUrlBundle\Services;
 
 use Doctrine\ORM\EntityManager;
-use NormalizedUrlBundle\Entity\Url;
-use NormalizedUrlBundle\Entity\Host;
-use NormalizedUrlBundle\Entity\Path;
-use NormalizedUrlBundle\Entity\Querystring;
+use EXS\NormalizedUrlBundle\Entity\Url;
+use EXS\NormalizedUrlBundle\Entity\Host;
+use EXS\NormalizedUrlBundle\Entity\Path;
+use EXS\NormalizedUrlBundle\Entity\Querystring;
 
 class UrlManager
 {
@@ -33,7 +33,7 @@ class UrlManager
      * @return int
      */
     public function getUrl($refData)
-    {        
+    {        var_dump("lala");die;
         $urlId = null;
         if(isset($refData->url) && !empty($refData->url)) { 
             $urlHash = $this->generateUrlHash($refData->url);       
@@ -69,7 +69,7 @@ class UrlManager
      * @param obj $host
      * @param obj $path
      * @param obj $querystring
-     * @return NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */
     public function createUrl($urlHash, $host, $path, $querystring)
     {       
@@ -87,7 +87,7 @@ class UrlManager
      * Search/Create/Get Host
      * 
      * @param string $hostName
-     * @return NormalizedUrlBundle\Entity\Host
+     * @return EXS\NormalizedUrlBundle\Entity\Host
      */
     public function processHost($hostName)
     {
@@ -102,7 +102,7 @@ class UrlManager
      * Add new host
      * 
      * @param string $hostName
-     * @return NormalizedUrlBundle\Entity\Host
+     * @return EXS\NormalizedUrlBundle\Entity\Host
      */
     public function createHost($hostName)
     {
@@ -120,7 +120,7 @@ class UrlManager
      * Search/Create/Get path
      * 
      * @param string $pathName
-     * @return NormalizedUrlBundle\Entity\Path
+     * @return EXS\NormalizedUrlBundle\Entity\Path
      */
     public function processPath($pathName)
     {
@@ -135,7 +135,7 @@ class UrlManager
      * Added new path
      * 
      * @param string $pathName
-     * @return NormalizedUrlBundle\Entity\Path
+     * @return EXS\NormalizedUrlBundle\Entity\Path
      */
     public function createPath($pathName)
     {
@@ -153,7 +153,7 @@ class UrlManager
      * Search/Create/Get querystring
      * 
      * @param string $qsName
-     * @return NormalizedUrlBundle\Entity\Querystring
+     * @return EXS\NormalizedUrlBundle\Entity\Querystring
      */
     public function processQuerystring($qsName)
     {
@@ -168,7 +168,7 @@ class UrlManager
      * Add new querystring
      * 
      * @param string $qsName
-     * @return NormalizedUrlBundle\Entity\Querystring
+     * @return EXS\NormalizedUrlBundle\Entity\Querystring
      */
     public function createQuerystring($qsName)
     {
@@ -200,7 +200,7 @@ class UrlManager
      * Get url by hash
      * 
      * @param string $urlHash
-     * @return NormalizedUrlBundle\Entity\Url
+     * @return EXS\NormalizedUrlBundle\Entity\Url
      */
     public function getUrlByHash($urlHash)
     {
@@ -216,7 +216,7 @@ class UrlManager
      * Get host by name
      * 
      * @param string $hostName
-     * @return NormalizedUrlBundle\Entity\Host
+     * @return EXS\NormalizedUrlBundle\Entity\Host
      */
     public function getHost($hostName)
     {
@@ -232,7 +232,7 @@ class UrlManager
      * Get path by name
      * 
      * @param string $pathName
-     * @return NormalizedUrlBundle\Entity\Path
+     * @return EXS\NormalizedUrlBundle\Entity\Path
      */
     public function getPath($pathName)
     {
@@ -248,7 +248,7 @@ class UrlManager
      * Get querystring by name
      * 
      * @param string $qsName
-     * @return NormalizedUrlBundle\Entity\Querystring
+     * @return NEXS\ormalizedUrlBundle\Entity\Querystring
      */
     public function getQuerystring($qsName)
     {
