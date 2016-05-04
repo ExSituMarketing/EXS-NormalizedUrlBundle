@@ -101,7 +101,7 @@ class Url
       *
       * @return Url
       */
-    public function setHost(Host $host)
+    public function setHost($host)
     {
         $this->host = $host;
 
@@ -125,7 +125,7 @@ class Url
      *
      * @return Url
      */
-    public function setPath(Path $path)
+    public function setPath($path)
     {
         $this->path = $path;
 
@@ -149,7 +149,7 @@ class Url
      *
      * @return Url
      */
-    public function setQuerystring(Querystring $querystring)
+    public function setQuerystring($querystring)
     {
         $this->querystring = $querystring;
 
