@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace EXS\NormalizedUrlBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index;
@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\Index;
  * Url
  *
  * @ORM\Table(name="urls",indexes={@Index(name="hashkey_idx", columns={"hashkey"})})
- * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\UrlRepository")
+ * @ORM\Entity(repositoryClass="EXS\NormalizedUrlBundle\Entity\Repository\UrlRepository")
  */
 class Url
 {
@@ -32,7 +32,7 @@ class Url
     /**
      * @var Host
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Host")
+     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Host")
      * @ORM\JoinColumn(name="host_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
     private $host;
@@ -40,7 +40,7 @@ class Url
     /**
      * @var Path
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Path")
+     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Path")
      * @ORM\JoinColumn(name="path_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
     private $path;
@@ -48,7 +48,7 @@ class Url
     /**
      * @var Querystring
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Querystring")
+     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Querystring")
      * @ORM\JoinColumn(name="querystring_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
     private $querystring;
