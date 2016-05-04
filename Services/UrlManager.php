@@ -33,7 +33,7 @@ class UrlManager
      * @return int
      */
     public function getUrl($refData)
-    {        var_dump("lala");die;
+    {
         $urlId = null;
         if(isset($refData->url) && !empty($refData->url)) { 
             $urlHash = $this->generateUrlHash($refData->url);       
@@ -204,7 +204,7 @@ class UrlManager
      */
     public function getUrlByHash($urlHash)
     {
-        $query = $this->entityManager->getRepository('NormalizedUrlBundle:Url')->getUrlByHash($urlHash);      
+        $query = $this->entityManager->getRepository('EXSNormalizedUrlBundle:Url')->getUrlByHash($urlHash);      
         $url = $query->getResult();
         if (isset($url[0])) {
             return $url[0];
@@ -220,7 +220,7 @@ class UrlManager
      */
     public function getHost($hostName)
     {
-        $query = $this->entityManager->getRepository('NormalizedUrlBundle:Host')->getHostByName($hostName);      
+        $query = $this->entityManager->getRepository('EXSNormalizedUrlBundle:Host')->getHostByName($hostName);      
         $host = $query->getResult();
         if (isset($host[0])) {
             return $host[0];
@@ -236,7 +236,7 @@ class UrlManager
      */
     public function getPath($pathName)
     {
-        $query = $this->entityManager->getRepository('NormalizedUrlBundle:Path')->getPathByName($pathName);      
+        $query = $this->entityManager->getRepository('EXSNormalizedUrlBundle:Path')->getPathByName($pathName);      
         $path = $query->getResult();
         if (isset($path[0])) {
             return $path[0];
@@ -252,7 +252,7 @@ class UrlManager
      */
     public function getQuerystring($qsName)
     {
-        $query = $this->entityManager->getRepository('NormalizedUrlBundle:Querystring')->getQuerystringByName($qsName);      
+        $query = $this->entityManager->getRepository('EXSNormalizedUrlBundle:Querystring')->getQuerystringByName($qsName);      
         $querystring = $query->getResult();
         if (isset($querystring[0])) {
             return $querystring[0];

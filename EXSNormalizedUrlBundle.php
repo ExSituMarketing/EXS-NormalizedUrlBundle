@@ -4,6 +4,6 @@ namespace EXS\NormalizedUrlBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class NormalizedUrlBundle extends Bundle
+class EXSNormalizedUrlBundle extends Bundle
 {
 }
