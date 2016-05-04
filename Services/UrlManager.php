@@ -69,7 +69,7 @@ class UrlManager
      * @param obj $host
      * @param obj $path
      * @param obj $querystring
-     * @return EXS\NormalizedUrlBundle\Entity\Url
+     * @return Url
      */
     public function createUrl($urlHash, $host, $path, $querystring)
     {       
@@ -79,7 +79,8 @@ class UrlManager
         $url->setPath($path);
         $url->setQuerystring($querystring);
         $url->setLogged(new \DateTime());
-        $this->SetEntity($url);
+        $this->entityManager->persist($url);
+        $this->entityManager->flush(); 
         return $url;
     }
     
@@ -87,7 +88,7 @@ class UrlManager
      * Search/Create/Get Host
      * 
      * @param string $hostName
-     * @return EXS\NormalizedUrlBundle\Entity\Host
+     * @return Host
      */
     public function processHost($hostName)
     {
@@ -102,7 +103,7 @@ class UrlManager
      * Add new host
      * 
      * @param string $hostName
-     * @return EXS\NormalizedUrlBundle\Entity\Host
+     * @return Host
      */
     public function createHost($hostName)
     {
@@ -110,7 +111,8 @@ class UrlManager
             $host = new Host();
             $host->setName($hostName);
             $host->setLogged(new \DateTime());
-            $this->SetEntity($host);
+            $this->entityManager->persist($host);
+            $this->entityManager->flush(); 
             return $host;
         }        
         return null;
@@ -120,7 +122,7 @@ class UrlManager
      * Search/Create/Get path
      * 
      * @param string $pathName
-     * @return EXS\NormalizedUrlBundle\Entity\Path
+     * @return Path
      */
     public function processPath($pathName)
     {
@@ -135,7 +137,7 @@ class UrlManager
      * Added new path
      * 
      * @param string $pathName
-     * @return EXS\NormalizedUrlBundle\Entity\Path
+     * @return Path
      */
     public function createPath($pathName)
     {
@@ -143,7 +145,8 @@ class UrlManager
             $path = new Path();
             $path->setName($pathName);
             $path->setLogged(new \DateTime());
-            $this->SetEntity($path);     
+            $this->entityManager->persist($path);
+            $this->entityManager->flush();   
             return $path;
         }
         return null;
@@ -153,7 +156,7 @@ class UrlManager
      * Search/Create/Get querystring
      * 
      * @param string $qsName
-     * @return EXS\NormalizedUrlBundle\Entity\Querystring
+     * @return Querystring
      */
     public function processQuerystring($qsName)
     {
@@ -168,7 +171,7 @@ class UrlManager
      * Add new querystring
      * 
      * @param string $qsName
-     * @return EXS\NormalizedUrlBundle\Entity\Querystring
+     * @return Querystring
      */
     public function createQuerystring($qsName)
     {
@@ -176,7 +179,8 @@ class UrlManager
             $querystring = new Querystring();
             $querystring->setName($qsName);
             $querystring->setLogged(new \DateTime());
-            $this->SetEntity($querystring);
+            $this->entityManager->persist($querystring);
+            $this->entityManager->flush(); 
             return $querystring;
         }
         return null;
@@ -200,7 +204,7 @@ class UrlManager
      * Get url by hash
      * 
      * @param string $urlHash
-     * @return EXS\NormalizedUrlBundle\Entity\Url
+     * @return Url
      */
     public function getUrlByHash($urlHash)
     {
@@ -216,7 +220,7 @@ class UrlManager
      * Get host by name
      * 
      * @param string $hostName
-     * @return EXS\NormalizedUrlBundle\Entity\Host
+     * @return Host
      */
     public function getHost($hostName)
     {
@@ -232,7 +236,7 @@ class UrlManager
      * Get path by name
      * 
      * @param string $pathName
-     * @return EXS\NormalizedUrlBundle\Entity\Path
+     * @return Path
      */
     public function getPath($pathName)
     {
@@ -248,7 +252,7 @@ class UrlManager
      * Get querystring by name
      * 
      * @param string $qsName
-     * @return NEXS\ormalizedUrlBundle\Entity\Querystring
+     * @return Querystring
      */
     public function getQuerystring($qsName)
     {
@@ -258,18 +262,5 @@ class UrlManager
             return $querystring[0];
         }
         return false;        
-    }     
-    
-    /**
-     * Save, flush the given entity.
-     * 
-     * @param entity $entity
-     * @return entity
-     */
-    public function SetEntity($entity)
-    {
-        $this->entityManager->persist($entity);
-        $this->entityManager->flush();         
-        return $entity;
-    }   
+    }      
 }

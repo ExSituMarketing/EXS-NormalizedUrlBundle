@@ -1,6 +1,6 @@
 <?php
 
-namespace EXS\NormalizedUrlBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index;
@@ -8,21 +8,20 @@ use Doctrine\ORM\Mapping\Index;
 /**
  * Url
  *
- * @ORM\Table(name="urls")
  * @ORM\Table(name="urls",indexes={@Index(name="hashkey_idx", columns={"hashkey"})})
- * @ORM\Entity(repositoryClass="EXS\NormalizedUrlBundle\Entity\Repository\UrlRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\UrlRepository")
  */
 class Url
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @var string
      *
@@ -31,28 +30,28 @@ class Url
     private $hashkey;
 
     /**
-     * @var integer
+     * @var Host
      *
-     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Host")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Host")
      * @ORM\JoinColumn(name="host_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
-    protected $host;
-    
+    private $host;
+
     /**
-     * @var integer
+     * @var Path
      *
-     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Path")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Path")
      * @ORM\JoinColumn(name="path_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
-    protected $path;
-    
+    private $path;
+
     /**
-     * @var integer
+     * @var Querystring
      *
-     * @ORM\ManyToOne(targetEntity="EXS\NormalizedUrlBundle\Entity\Querystring")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Querystring")
      * @ORM\JoinColumn(name="querystring_id", referencedColumnName="id", nullable=true, onDelete="set null")
      */
-    protected $querystring;
+    private $querystring;
 
     /**
      * @var \DateTime
@@ -61,10 +60,9 @@ class Url
      */
     private $logged;
 
-
     /**
      * Get url id
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -74,10 +72,11 @@ class Url
 
     /**
      * Set url hashkey
-     * 
+     *
      * @param string $hashkey
-     * @return EXS\NormalizedUrlBundle\Entity\Url
-     */    
+     *
+     * @return Url
+     */
     public function setHashkey($hashkey)
     {
         $this->hashkey = $hashkey;
@@ -87,7 +86,7 @@ class Url
 
     /**
      * Get url hashkey
-     * 
+     *
      * @return string
      */
     public function getHashkey()
@@ -96,12 +95,13 @@ class Url
     }
 
      /**
-     * Set url host
-     * 
-     * @param int $host
-     * @return EXS\NormalizedUrlBundle\Entity\Url
-     */    
-    public function setHost($host)
+      * Set url host
+      *
+      * @param Host $host
+      *
+      * @return Url
+      */
+    public function setHost(Host $host)
     {
         $this->host = $host;
 
@@ -110,21 +110,22 @@ class Url
 
     /**
      * Get url host
-     * 
-     * @return int
+     *
+     * @return Host
      */
     public function getHost()
     {
         return $this->host;
-    }   
-    
-      /**
+    }
+
+    /**
      * Set url path
-     * 
-     * @param int $path
-     * @return EXS\NormalizedUrlBundle\Entity\Url
-     */    
-    public function setPath($path)
+     *
+     * @param Path $path
+     *
+     * @return Url
+     */
+    public function setPath(Path $path)
     {
         $this->path = $path;
 
@@ -133,21 +134,22 @@ class Url
 
     /**
      * Get url path
-     * 
-     * @return int
+     *
+     * @return Path
      */
     public function getPath()
     {
         return $this->path;
-    }     
-    
-     /**
+    }
+
+    /**
      * Set url querystring
-     * 
-     * @param int $querystring
-     * @return EXS\NormalizedUrlBundle\Entity\Url
-     */    
-    public function setQuerystring($querystring)
+     *
+     * @param Querystring $querystring
+     *
+     * @return Url
+     */
+    public function setQuerystring(Querystring $querystring)
     {
         $this->querystring = $querystring;
 
@@ -156,19 +158,20 @@ class Url
 
     /**
      * Get url querystring
-     * 
-     * @return int
+     *
+     * @return Querystring
      */
     public function getQuerystring()
     {
         return $this->querystring;
-    }       
-    
+    }
+
     /**
      * Set logged datetime
-     * 
-     * @param Datetime $logged
-     * @return EXS\NormalizedUrlBundle\Entity\Url
+     *
+     * @param \Datetime $logged
+     *
+     * @return Url
      */
     public function setLogged($logged)
     {
@@ -179,8 +182,8 @@ class Url
 
     /**
      * Get logged datetime
-     * 
-     * @return Datetime
+     *
+     * @return \Datetime
      */
     public function getLogged()
     {
