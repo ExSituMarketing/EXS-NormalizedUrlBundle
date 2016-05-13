@@ -18,7 +18,8 @@ class QuerystringRepository extends EntityRepository
             ->where('q.name = :qsName')
             ->setParameter('qsName', $qsName)
             ->setMaxResults(1)
-            ->getQuery();            
+            ->getQuery()
+            ->useResultCache(true, 600);
         return $query;
     }       
 }

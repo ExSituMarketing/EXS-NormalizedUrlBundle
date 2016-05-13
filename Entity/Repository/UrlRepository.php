@@ -18,7 +18,8 @@ class UrlRepository extends EntityRepository
             ->where('u.hashkey = :hashkey')
             ->setParameter('hashkey', $urlHash)
             ->setMaxResults(1)
-            ->getQuery();            
+            ->getQuery()
+            ->useResultCache(true, 600);
         return $query;
     }    
 }

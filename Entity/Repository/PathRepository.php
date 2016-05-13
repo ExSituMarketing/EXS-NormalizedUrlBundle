@@ -18,7 +18,8 @@ class PathRepository extends EntityRepository
             ->where('p.name = :pathName')
             ->setParameter('pathName', $pathName)
             ->setMaxResults(1)
-            ->getQuery();            
+            ->getQuery()
+            ->useResultCache(true, 600);
         return $query;
     }       
 }

@@ -18,7 +18,8 @@ class HostRepository extends EntityRepository
             ->where('h.name = :hostName')
             ->setParameter('hostName', $hostName)
             ->setMaxResults(1)
-            ->getQuery();            
+            ->getQuery()
+            ->useResultCache(true, 600);
         return $query;
     }      
 }
